@@ -30,3 +30,10 @@ Features:
 ## Spring Initializr
 
 - Ir a start [Spring Initializr](https://start.spring.io/) 
+
+
+## @SpringBootApplication
+- Indica que es una archivo del contexto de Spring
+- activa AutoConfiguration
+- activa el ComponentScan
+
