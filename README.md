@@ -37,3 +37,12 @@ Features:
 - activa AutoConfiguration
 - activa el ComponentScan
 
+## Setting up JDBC,JPA,H2 AND WEB DEPENDENCIES
+- maven project
+- java
+- spring boot version
+- dependencies:jpa,h2,jdbc,web
+
+
+
+
