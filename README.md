@@ -43,13 +43,16 @@ Features:
 - spring boot version
 - dependencies:jpa,h2,jdbc,web
 
-##Launching up H2 Console
+## Launching up H2 Console
 Al correr tu aplicacion de Spring boot
-http://localhost:8081/h2-console/
+	http://localhost:8081/h2-console/
+
 Saved Settings : Generic H2
 Setting Name: Generic H2
 Driver class: org.h2.Driver
-jdbc url: jdbc:h2:mem:testdb
+
+La URL se muestra en consola, como es una base temporal se modifica cada vez que se despliega la aplicación
+jdbc url: jdbc:h2:mem:testdb 
 jdbc url: jdbc:h2:~/test
 
 Default:
@@ -58,6 +61,10 @@ password:[vacio]
 En mi caso:
 user:[vacio]
 password:[vacio]
+
+
+## File data.sql
+Este archivo se crea para generar nuestros scripts de H2 por default
 
 
 
