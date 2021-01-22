@@ -1,1 +1,1 @@
-Developing Spring Applications before Spring Boot
+Step 7: Spring Boot Starter Projects - Starter Web and Starter JPA
