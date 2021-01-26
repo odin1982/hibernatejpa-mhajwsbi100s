@@ -21,6 +21,8 @@ public class SpringBootIn10StepsApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("All users:\n {}",dao.findAll());
+		logger.info("User id 10001 -> {}",dao.findById(1001));
+		logger.info("User id 10001 deleted-> {}",dao.deletedById(1002));
 	}
 
 }
