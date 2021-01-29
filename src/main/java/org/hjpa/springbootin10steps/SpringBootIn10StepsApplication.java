@@ -1,6 +1,9 @@
 package org.hjpa.springbootin10steps;
 
+import java.time.LocalDate;
+
 import org.hjpa.springbootin10steps.dao.PersonJdbcDao;
+import org.hjpa.springbootin10steps.entity.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,8 @@ public class SpringBootIn10StepsApplication implements CommandLineRunner{
 		logger.info("All users:\n {}",dao.findAll());
 		logger.info("User id 10001 -> {}",dao.findById(1001));
 		logger.info("User id 10001 deleted-> {}",dao.deletedById(1002));
+		logger.info("insert: 1004" + dao.insert(new Person(1004,"Jonathan","Ecatepec",LocalDate.now())));
+		logger.info("update: 1004" + dao.update(new Person(1000,"Romano","Santa fe",LocalDate.now())));
 	}
 
 }

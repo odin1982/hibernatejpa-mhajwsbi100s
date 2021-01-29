@@ -1,5 +1,6 @@
 package org.hjpa.springbootin10steps.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.hjpa.springbootin10steps.entity.Person;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class PersonJdbcDao {
+	private final String insert="insert into person(id,name,location,birth_date) values (?,?,?,?)";
+	private final String update="update person set name=?,location=?,birth_date=? where id=?";
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	//select * from person
@@ -23,6 +26,23 @@ public class PersonJdbcDao {
 	
 	public int deletedById(int id){
 		return jdbcTemplate.update("delete from person where id=?",new Object[]{id});
+	}
+	
+	public int insert(Person person) {
+		return jdbcTemplate.update(insert, 
+				new Object[] {	person.getId(),
+								person.getName(),
+								person.getLocation(),
+								person.getBirthDate()});
+	}
+	
+	public int update(Person person) {
+		return jdbcTemplate.update(update, 
+				new Object[] {
+								person.getName(),
+								person.getLocation(),
+								person.getBirthDate(),
+								person.getId()});
 	}
 
 }
