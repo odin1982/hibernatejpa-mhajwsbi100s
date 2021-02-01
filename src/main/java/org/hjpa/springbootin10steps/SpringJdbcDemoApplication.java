@@ -11,19 +11,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class SpringBootIn10StepsApplication implements CommandLineRunner{
+//@SpringBootApplication
+public class SpringJdbcDemoApplication implements CommandLineRunner{
 	private Logger logger =LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	PersonJdbcDao dao;
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootIn10StepsApplication.class, args);
+		SpringApplication.run(SpringJdbcDemoApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("All users:\n {}",dao.findAll());
+		logger.info("All users:\n {}",dao.findAllWithRowMapper());
 		logger.info("User id 10001 -> {}",dao.findById(1001));
 		logger.info("User id 10001 deleted-> {}",dao.deletedById(1002));
 		logger.info("insert: 1004" + dao.insert(new Person(1004,"Jonathan","Ecatepec",LocalDate.now())));
